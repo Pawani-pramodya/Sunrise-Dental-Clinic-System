@@ -1,0 +1,24 @@
+public ResultSet getAllStudents(){
+
+    ResultSet rs = null;
+
+    try{
+
+        Connection con = DBconnection.getConnection();
+
+        String sql = "SELECT * FROM student";
+
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        rs = pst.executeQuery();
+
+    }
+    catch(Exception e){
+
+        System.out.println(e);
+
+    }
+
+    return rs;
+
+}
